@@ -11,27 +11,79 @@
 
 </style>
 
-<script>
-
-obeterDados('Qual o seu numero')
 
 
-function obeterDados(numero) { 
-let obter = prompt (numero)
-console.log(obter)
-    
-}
-var soma
-
-var subitração
-
-var multiplicação
-
-var divisão
-
-</script>
 <body>
+<h1>Logica da Programação com JavaScripit</h1>
+
+<input type="button" value="+" onclick="calcular('+')">
+<input type="button" value="-" onclick="calcular('-')">
+<input type="button" value="*" onclick="calcular('x')">
+<input type="button" value="/" onclick="calcular('/')">
+
+<div id="output">Valor inicial</div>
+
+
+<script>
+    var primeiroNumero = 0
+    var segundoNumero = 0
+    var divOutput = document.getElementById ('output')
+
+    obterNumero('Informe o primeiro número:')
+
+ exibir(primeiroNumero)
+
+
+        function calcular(operador) {
+            
+            obterNumero ('Iforme o segundo Numero')
+    
+        let resultado = 0
+   
+         
+        
+        
+        switch (operador) {
+                case '+':
+                    resultado = primeiroNumero + segundoNumero
+                    break;
+                case '-':
+                    resultado = primeiroNumero - segundoNumero
+                    break;
+                case 'x':
+                    resultado = primeiroNumero * segundoNumero
+                    break;
+                case '/':
+                    resultado = primeiroNumero / segundoNumero
+                    break;
+                default:
+                    break;
+            }        
+exibir (resultado)
+        
+        }
+      
+        function obterNumero(label) {
+            let numero = parseFloat(prompt(label))
+
+            if (primeiroNumero === 0) {
+                primeiroNumero = numero
+            }
+            else {
+                segundoNumero = numero
+            }
+        }
+
+        function exibir(valor) {
+            divOutput.innerText = valor;
+        }
+    
+    
+    
+    
 
     
+    </script>
+
 </body>
 </html>
